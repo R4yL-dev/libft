@@ -6,16 +6,20 @@
 #    By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 00:22:15 by lray              #+#    #+#              #
-#    Updated: 2023/09/06 00:23:24 by lray             ###   ########.fr        #
+#    Updated: 2023/09/06 01:08:05 by lray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
 
 SRCS 		:= \
+	ft_strlen.c
 
 
 OBJS		:= $(SRCS:.c=.o)
+
+TEST_SRCS	:= $(patsubst %.c, tests/test_%.c, $(SRCS))
+TEST_OBJS	:= $(patsubst %.c, tests/test_%.o, $(SRCS))
 
 CC 			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
@@ -35,22 +39,29 @@ $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	$(info CREATED $(NAME))
 
-all : $(NAME)
+all: $(NAME)
 
-clean :
+test: $(TEST_OBJS) $(OBJS)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(TEST_OBJS) $(OBJS) -o test
+
+clean:
 	$(RM) $(OBJS)
 	$(info DELETED objects files)
 
-fclean : clean
+clean_test:
+	$(RM) $(TEST_OBJS) test
+	$(info DELETED test files)
+
+fclean: clean clean_test
 	$(RM) $(NAME)
 	$(info DELETED $(NAME))
 
-re :
+re:
 	$(MAKE) fclean
 	$(MAKE) all
 
 info-%:
 	$(MAKE) --dry-run --always-make $* | grep -v "info"
 
-.PHONY : clean fclean re info-
+.PHONY : clean clean_test fclean re info-
 .SILENT :
