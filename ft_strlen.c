@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/06 00:38:33 by lray             ###   ########.fr       */
+/*   Created: 2023/09/06 00:27:19 by lray              #+#    #+#             */
+/*   Updated: 2023/09/06 00:35:49 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stddef.h>
+size_t	ft_strlen(const char *s)
+{
+	size_t	res;
 
-/**
- * @brief Calculates the length of a null-terminated string.
- *
- * @param s The string to calculate the length of.
- *
- * @return The length of the string, not including the null terminator character.
- *			If the input pointer is NULL, returns -1.
- */
-size_t	ft_strlen(const char *s);
-#endif
+	if (s == NULL)
+		return (-1);
+	res = 0;
+	while (s[res] != '\0')
+		res++;
+	return (res);
+}
