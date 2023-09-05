@@ -6,7 +6,7 @@
 #    By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 00:22:15 by lray              #+#    #+#              #
-#    Updated: 2023/09/06 01:08:05 by lray             ###   ########.fr        #
+#    Updated: 2023/09/06 01:09:48 by lray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ SRCS 		:= \
 
 OBJS		:= $(SRCS:.c=.o)
 
-TEST_SRCS	:= $(patsubst %.c, tests/test_%.c, $(SRCS))
-TEST_OBJS	:= $(patsubst %.c, tests/test_%.o, $(SRCS))
+TEST_SRCS	:= $(patsubst %.c, test/test_%.c, $(SRCS))
+TEST_OBJS	:= $(patsubst %.c, test/test_%.o, $(SRCS))
 
 CC 			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
