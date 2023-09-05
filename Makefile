@@ -6,7 +6,7 @@
 #    By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 00:22:15 by lray              #+#    #+#              #
-#    Updated: 2023/09/06 00:22:27 by lray             ###   ########.fr        #
+#    Updated: 2023/09/06 00:23:24 by lray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS		:= $(SRCS:.c=.o)
 
 CC 			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
-CPPFLAGS	:= -I./ -I./gnl/ -I./ft_printf/ -I./ft_stack/
+CPPFLAGS	:= -I./
 
 AR			:= ar
 ARFLAGS		:= -r -c -s
