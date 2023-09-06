@@ -3,3 +3,6 @@
 *.out
 *.txt
 test_*
+bin/
+obj/
+.vscode/
