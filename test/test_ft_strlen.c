@@ -6,13 +6,13 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:39:58 by lray              #+#    #+#             */
-/*   Updated: 2023/09/06 00:40:46 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/06 02:43:18 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include "../libft.h"
+#include "../include/libft.h"
 
 void	test_ft_strlen(const char *s)
 {

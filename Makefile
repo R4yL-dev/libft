@@ -6,7 +6,7 @@
 #    By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 00:22:15 by lray              #+#    #+#              #
-#    Updated: 2023/09/06 02:40:23 by lray             ###   ########.fr        #
+#    Updated: 2023/09/06 02:43:31 by lray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ TEST_NAME	:= $(patsubst src/%.c, test_%, $(SRCS))
 
 CC 			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
-CPPFLAGS	:= -I./
+CPPFLAGS	:= -I./include
 
 AR			:= ar
 ARFLAGS		:= -r -c -s
