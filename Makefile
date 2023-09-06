@@ -6,20 +6,20 @@
 #    By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 00:22:15 by lray              #+#    #+#              #
-#    Updated: 2023/09/06 01:09:48 by lray             ###   ########.fr        #
+#    Updated: 2023/09/06 02:40:23 by lray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
 
 SRCS 		:= \
-	ft_strlen.c
+	src/ft_strlen.c
 
+OBJS		:= $(patsubst src/%.c, obj/%.o, $(SRCS))
 
-OBJS		:= $(SRCS:.c=.o)
-
-TEST_SRCS	:= $(patsubst %.c, test/test_%.c, $(SRCS))
-TEST_OBJS	:= $(patsubst %.c, test/test_%.o, $(SRCS))
+TEST_SRCS	:= $(patsubst src/%.c, test/test_%.c, $(SRCS))
+TEST_OBJS	:= $(patsubst src/%.c, obj/test_%.o, $(SRCS))
+TEST_NAME	:= $(patsubst src/%.c, test_%, $(SRCS))
 
 CC 			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
@@ -31,8 +31,14 @@ ARFLAGS		:= -r -c -s
 RM			:= rm -f
 MAKEFLAGS   += --no-print-directory
 
-.c.o:
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o ${<:.c=.o}
+obj/%.o: src/%.c
+	mkdir -p obj
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+	$(info CREATED $@)
+
+obj/test_%.o: test/test_%.c
+	mkdir -p obj
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 	$(info CREATED $@)
 
 $(NAME) : $(OBJS)
@@ -41,20 +47,25 @@ $(NAME) : $(OBJS)
 
 all: $(NAME)
 
+
 test: $(TEST_OBJS) $(OBJS)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(TEST_OBJS) $(OBJS) -o test
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(TEST_OBJS) $(OBJS) -o $(TEST_NAME)
+	$(info CREATED $(TEST_NAME))
 
 clean:
 	$(RM) $(OBJS)
 	$(info DELETED objects files)
 
 clean_test:
-	$(RM) $(TEST_OBJS) test
-	$(info DELETED test files)
+	$(RM) $(TEST_OBJS)
+	$(info DELETED object test files)
 
 fclean: clean clean_test
 	$(RM) $(NAME)
 	$(info DELETED $(NAME))
+	$(RM) $(TEST_NAME)
+	$(info DELETED $(TEST_NAME))
+	rm -rf obj/
 
 re:
 	$(MAKE) fclean
