@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 23:24:33 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 00:53:18 by lray             ###   ########.fr       */
+/*   Created: 2023/09/07 00:48:02 by lray              #+#    #+#             */
+/*   Updated: 2023/09/07 00:53:50 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-# define TEST_H
+#include "../include/libft.h"
 
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-
-int	test_ft_isalpha(void);
-int	test_ft_islower(void);
-int	test_ft_isupper(void);
-int	test_ft_strlen(void);
-
-#endif
+int	ft_isalpha(int c)
+{
+	if (ft_isupper(c) || ft_islower(c))
+		return (1);
+	else
+		return (0);
+}
