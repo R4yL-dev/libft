@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 00:05:51 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 00:36:24 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 00:46:03 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main()
 {
+	test_ft_islower();
 	test_ft_isupper();
 	test_ft_strlen();
 	return (0);
