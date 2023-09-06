@@ -6,51 +6,55 @@
 #    By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 00:22:15 by lray              #+#    #+#              #
-#    Updated: 2023/09/06 02:43:31 by lray             ###   ########.fr        #
+#    Updated: 2023/09/07 00:39:37 by lray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= libft.a
-
-SRCS 		:= \
-	src/ft_strlen.c
-
-OBJS		:= $(patsubst src/%.c, obj/%.o, $(SRCS))
-
-TEST_SRCS	:= $(patsubst src/%.c, test/test_%.c, $(SRCS))
-TEST_OBJS	:= $(patsubst src/%.c, obj/test_%.o, $(SRCS))
-TEST_NAME	:= $(patsubst src/%.c, test_%, $(SRCS))
+NAME		:= bin/libft.a
 
 CC 			:= gcc
-CFLAGS		:= -Wall -Wextra -Werror
-CPPFLAGS	:= -I./include
+CFLAGS		:= -Wall -Wextra -Werror -I./include
+TESTFLAGS	:=
 
 AR			:= ar
 ARFLAGS		:= -r -c -s
 
+SRCDIR 		:= src
+OBJDIR		:= obj
+BINDIR		:= bin
+TESTDIR		:= test
+
+SRCS		:= $(wildcard $(SRCDIR)/*.c)
+OBJS		:= $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRCS))
+TEST_SRCS	:= $(wildcard $(TESTDIR)/*.c)
+TEST_OBJS	:= $(patsubst $(TESTDIR)/%.c,$(OBJDIR)/%.o,$(TEST_SRCS))
+TEST_BINS	:= $(patsubst $(TESTDIR)/%.c,$(BINDIR)/%,$(TEST_SRCS))
+
 RM			:= rm -f
 MAKEFLAGS   += --no-print-directory
 
-obj/%.o: src/%.c
-	mkdir -p obj
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
-	$(info CREATED $@)
-
-obj/test_%.o: test/test_%.c
-	mkdir -p obj
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
-	$(info CREATED $@)
+all: init $(NAME)
 
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	$(info CREATED $(NAME))
 
-all: $(NAME)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	$(info CREATED $@)
 
+test: init $(BINDIR)/tests
+	$(info CREATED test)
 
-test: $(TEST_OBJS) $(OBJS)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(TEST_OBJS) $(OBJS) -o $(TEST_NAME)
-	$(info CREATED $(TEST_NAME))
+$(BINDIR)/tests: $(TEST_OBJS) $(OBJS)
+	$(CC) $(CFLAGS) $(TEST_OBJS) $(OBJS) -o $@
+	$(info CREATED $@)
+
+$(OBJDIR)/%.o: $(TESTDIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+init:
+	mkdir -p $(OBJDIR) $(BINDIR)
 
 clean:
 	$(RM) $(OBJS)
@@ -64,8 +68,7 @@ fclean: clean clean_test
 	$(RM) $(NAME)
 	$(info DELETED $(NAME))
 	$(RM) $(TEST_NAME)
-	$(info DELETED $(TEST_NAME))
-	rm -rf obj/
+	$(info DELETED /bin/tests)
 
 re:
 	$(MAKE) fclean
