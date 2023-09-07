@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 16:36:17 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 17:05:07 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,16 @@ int	ft_isupper(int c);
  * @return void* Returns a pointer to the first occurrence of the byte `c` in the block of memory `s`, or NULL if the byte is not found.
  */
 void	*ft_memchr(const void *s, int c, size_t n);
+
+/**
+ * @brief Compare two blocks of memory.
+ *
+ * @param s1 Pointer to the first block of memory to compare.
+ * @param s2 Pointer to the second block of memory to compare.
+ * @param n Number of bytes to compare.
+ * @return int Returns an integer less than, equal to, or greater than zero if the first `n` bytes of the block pointed to by `s1` is found, respectively, to be less than, to match, or be greater than the first `n` bytes of the block pointed to by `s2`.
+ */
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /**
  * @brief Copy a block of memory from source to destination.
