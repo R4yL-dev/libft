@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 23:24:33 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 12:36:45 by lray             ###   ########.fr       */
+/*   Created: 2023/09/07 12:29:59 by lray              #+#    #+#             */
+/*   Updated: 2023/09/07 12:31:26 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-# define TEST_H
+#include "../include/libft.h"
 
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-
-int	test_ft_isalnum(void);
-int	test_ft_isalpha(void);
-int	test_ft_isblank(void);
-int	test_ft_iscntrl(void);
-int	test_ft_isdigit(void);
-int	test_ft_islower(void);
-int	test_ft_isprint(void);
-int	test_ft_isupper(void);
-int	test_ft_strlen(void);
-
-#endif
+int	ft_iscntrl(int c)
+{
+	if (c >= 0 && c <= 31)
+		return (1);
+	else if (c == 127)
+		return (1);
+	else
+		return (0);
+}
