@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 00:05:51 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 15:45:10 by lray             ###   ########.fr       */
+/*   Created: 2023/09/07 15:36:21 by lray              #+#    #+#             */
+/*   Updated: 2023/09/07 15:37:51 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test.h"
+#include "../include/libft.h"
 
-int main()
+void	ft_bzero(void *s, size_t n)
 {
-	test_ft_bzero();
-	test_ft_isalnum();
-	test_ft_isalpha();
-	test_ft_isblank();
-	test_ft_iscntrl();
-	test_ft_isdigit();
-	test_ft_isgraph();
-	test_ft_islower();
-	test_ft_isprint();
-	test_ft_ispunct();
-	test_ft_isspace();
-	test_ft_isupper();
-	test_ft_memset();
-	test_ft_strlen();
-	test_ft_tolower();
-	test_ft_toupper();
-	return (0);
+	ft_memset(s, '\0', n);
 }

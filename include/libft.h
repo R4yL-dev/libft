@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 15:16:07 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 15:39:06 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 # define LIBFT_H
 
 # include <stddef.h>
+
+/**
+ * @brief Fill a block of memory with zeros.
+ *
+ * @param s Pointer to the block of memory to fill.
+ * @param n Number of bytes to be set to zero.
+ * @return void
+ */
+void	ft_bzero(void *s, size_t n);
 
 /**
  * @brief Check if a character is alphanumeric.
