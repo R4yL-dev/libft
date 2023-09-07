@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 12:43:30 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 12:56:11 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,14 @@ int	ft_islower(int c);
  * @return int Returns 1 if the character is printable, 0 otherwise.
  */
 int	ft_isprint(int c);
+
+/**
+ * @brief Check if a character is a punctuation character.
+ *
+ * @param c The character to check.
+ * @return int Returns 1 if the character is a punctuation character, 0 otherwise.
+ */
+int	ft_ispunct(int c);
 
 /**
  * @brief Check if a character is an uppercase letter.
