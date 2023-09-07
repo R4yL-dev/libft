@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 14:38:10 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 14:58:52 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,14 @@ int	ft_isupper(int c);
  *			If the input pointer is NULL, returns -1.
  */
 size_t	ft_strlen(const char *s);
+
+/**
+ * @brief Convert an uppercase letter to lowercase.
+ *
+ * @param c The character to convert.
+ * @return int Returns the lowercase equivalent of the input character, or the input character if it is not an uppercase letter.
+ */
+int	ft_tolower(int c);
 
 /**
  * @brief Convert a lowercase letter to uppercase.

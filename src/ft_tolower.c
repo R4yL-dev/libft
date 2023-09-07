@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 00:05:51 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 14:56:59 by lray             ###   ########.fr       */
+/*   Created: 2023/09/07 14:53:10 by lray              #+#    #+#             */
+/*   Updated: 2023/09/07 14:58:01 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/test.h"
+#include "../include/libft.h"
 
-int main()
+int	ft_tolower(int c)
 {
-	test_ft_isalnum();
-	test_ft_isalpha();
-	test_ft_isblank();
-	test_ft_iscntrl();
-	test_ft_isdigit();
-	test_ft_isgraph();
-	test_ft_islower();
-	test_ft_isprint();
-	test_ft_ispunct();
-	test_ft_isspace();
-	test_ft_isupper();
-	test_ft_strlen();
-	test_ft_tolower();
-	test_ft_toupper();
-	return (0);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
 }
