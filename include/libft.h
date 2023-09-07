@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 11:53:31 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 12:15:12 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ int	ft_isalnum(int c);
  * @return int Returns 1 if the character is an alphabetic character, 0 otherwise.
  */
 int	ft_isalpha(int c);
+
+/**
+ * @brief Check if a character is a blank character (space or tab).
+ *
+ * @param c The character to check.
+ * @return int Returns 1 if the character is a blank character, 0 otherwise.
+ */
+int	ft_isblank(int c);
 
 /**
  * @brief Check if a character is a digit.
