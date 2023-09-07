@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 00:05:51 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 16:26:47 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 16:43:18 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 	test_ft_ispunct();
 	test_ft_isspace();
 	test_ft_isupper();
+	test_ft_memchr();
 	test_ft_memcpy();
 	test_ft_memmove();
 	test_ft_memset();

@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 16:19:34 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 16:36:17 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,16 @@ int	ft_isspace(int c);
  * @return int Returns 1 if the character is an uppercase letter, 0 otherwise.
  */
 int	ft_isupper(int c);
+
+/**
+ * @brief Locate the first occurrence of a byte in a block of memory.
+ *
+ * @param s Pointer to the block of memory to search.
+ * @param c Value to search for.
+ * @param n Number of bytes to search.
+ * @return void* Returns a pointer to the first occurrence of the byte `c` in the block of memory `s`, or NULL if the byte is not found.
+ */
+void	*ft_memchr(const void *s, int c, size_t n);
 
 /**
  * @brief Copy a block of memory from source to destination.
