@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 15:58:01 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 16:19:34 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,16 @@ int	ft_isupper(int c);
  * @return void* Returns a pointer to the destination memory block `dest`.
  */
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+
+/**
+ * @brief Copy a block of memory from source to destination, handling overlapping memory blocks.
+ *
+ * @param dest Pointer to the destination memory block.
+ * @param src Pointer to the source memory block.
+ * @param n Number of bytes to copy.
+ * @return void* Returns a pointer to the destination memory block `dest`.
+ */
+void	*ft_memmove(void *dest, const void *src, size_t n);
 
 /**
  * @brief Fill a block of memory with a specified value.
