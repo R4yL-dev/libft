@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 11:19:36 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 11:30:37 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 # define LIBFT_H
 
 # include <stddef.h>
+
+/**
+ * @brief Check if a character is alphanumeric.
+ *
+ * @param c The character to check.
+ * @return int Returns 1 if the character is alphanumeric, 0 otherwise.
+ */
+int	ft_isalnum(int c);
 
 /**
  * @brief Check if a character is an alphabetic character.
