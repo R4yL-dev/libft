@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 15:39:06 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 15:58:01 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,16 @@ int	ft_isspace(int c);
  * @return int Returns 1 if the character is an uppercase letter, 0 otherwise.
  */
 int	ft_isupper(int c);
+
+/**
+ * @brief Copy a block of memory from source to destination.
+ *
+ * @param dest Pointer to the destination memory block.
+ * @param src Pointer to the source memory block.
+ * @param n Number of bytes to copy.
+ * @return void* Returns a pointer to the destination memory block `dest`.
+ */
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 /**
  * @brief Fill a block of memory with a specified value.
