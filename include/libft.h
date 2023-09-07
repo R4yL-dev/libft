@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 00:50:20 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 11:19:36 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@
  * @return int Returns 1 if the character is an alphabetic character, 0 otherwise.
  */
 int	ft_isalpha(int c);
+
+/**
+ * @brief Check if a character is a digit.
+ *
+ * @param c The character to check.
+ * @return int Returns 1 if the character is a digit, 0 otherwise.
+ */
+int	ft_isdigit(int c);
 
 /**
  * @brief Check if a character is a lowercase letter.
