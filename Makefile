@@ -6,15 +6,15 @@
 #    By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 00:22:15 by lray              #+#    #+#              #
-#    Updated: 2023/09/07 00:39:37 by lray             ###   ########.fr        #
+#    Updated: 2023/09/07 12:26:59 by lray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= bin/libft.a
 
 CC 			:= gcc
-CFLAGS		:= -Wall -Wextra -Werror -I./include
-TESTFLAGS	:=
+CFLAGS		:= -Wall -Wextra -Werror -I./include -g
+TESTFLAGS	:= -fsanitize=address
 
 AR			:= ar
 ARFLAGS		:= -r -c -s
@@ -47,7 +47,7 @@ test: init $(BINDIR)/tests
 	$(info CREATED test)
 
 $(BINDIR)/tests: $(TEST_OBJS) $(OBJS)
-	$(CC) $(CFLAGS) $(TEST_OBJS) $(OBJS) -o $@
+	$(CC) $(CFLAGS) $(TESTFLAGS) $(TEST_OBJS) $(OBJS) -o $@
 	$(info CREATED $@)
 
 $(OBJDIR)/%.o: $(TESTDIR)/%.c
