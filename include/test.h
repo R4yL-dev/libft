@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 23:24:33 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 14:56:47 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 15:15:37 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	test_ft_isprint(void);
 int	test_ft_ispunct(void);
 int	test_ft_isspace(void);
 int	test_ft_isupper(void);
+int	test_ft_memset(void);
 int	test_ft_strlen(void);
 int	test_ft_tolower(void);
 int	test_ft_toupper(void);

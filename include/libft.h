@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 14:58:52 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 15:16:07 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,16 @@ int	ft_isspace(int c);
  * @return int Returns 1 if the character is an uppercase letter, 0 otherwise.
  */
 int	ft_isupper(int c);
+
+/**
+ * @brief Fill a block of memory with a specified value.
+ *
+ * @param s Pointer to the block of memory to fill.
+ * @param c Value to be set.
+ * @param n Number of bytes to be set to the value.
+ * @return void* Returns a pointer to the memory block `s`.
+ */
+void	*ft_memset(void *s, int c, size_t n);
 
 /**
  * @brief Calculates the length of a null-terminated string.
