@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 12:56:11 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 14:38:10 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,14 @@ int	ft_isprint(int c);
 int	ft_ispunct(int c);
 
 /**
+ * @brief Check if a character is a whitespace character.
+ *
+ * @param c The character to check.
+ * @return int Returns 1 if the character is a whitespace character, 0 otherwise.
+ */
+int	ft_isspace(int c);
+
+/**
  * @brief Check if a character is an uppercase letter.
  *
  * @param c The character to check.
@@ -104,4 +112,13 @@ int	ft_isupper(int c);
  *			If the input pointer is NULL, returns -1.
  */
 size_t	ft_strlen(const char *s);
+
+/**
+ * @brief Convert a lowercase letter to uppercase.
+ *
+ * @param c The character to convert.
+ * @return int Returns the uppercase equivalent of the input character, or the input character if it is not a lowercase letter.
+ */
+int	ft_toupper(int c);
+
 #endif
