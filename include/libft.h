@@ -6,7 +6,7 @@
 /*   By: lray <lray@student.42lausanne.ch >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:25:08 by lray              #+#    #+#             */
-/*   Updated: 2023/09/07 12:32:13 by lray             ###   ########.fr       */
+/*   Updated: 2023/09/07 12:43:30 by lray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,14 @@ int	ft_iscntrl(int c);
  * @return int Returns 1 if the character is a digit, 0 otherwise.
  */
 int	ft_isdigit(int c);
+
+/**
+ * @brief Check if a character is a printable character other than a space.
+ *
+ * @param c The character to check.
+ * @return int Returns 1 if the character is a printable character other than a space, 0 otherwise.
+ */
+int	ft_isgraph(int c);
 
 /**
  * @brief Check if a character is a lowercase letter.
